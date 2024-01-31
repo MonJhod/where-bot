@@ -4,11 +4,16 @@ import discord
 from discord.ext import commands
 import logging
 from IPChecker import IPChecker
+from configparser import ConfigParser
 
 global channel
 channel = None
 global debug
 debug = False
+
+cf = ConfigParser()
+cf.read('config')
+token = cf['Token']['token']
 
 logger = logging.getLogger('discord.bot')
 logger.setLevel(logging.DEBUG)  # Set to logging.INFO to reduce verbosity
@@ -90,4 +95,4 @@ async def here(ctx):
     await ctx.send(f'Channel set: {channel.name}')
 
 # Your bot token
-bot.run('MTIwMjA2NDI2MjI2MDg1MDczOA.GXA3jq.5LGPYIextzZeLUC_o1JewuOtWvqOaeo5BY7Zcc')
+bot.run(token)

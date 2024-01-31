@@ -1,0 +1,4 @@
+# Rename this file to 'config' after you add your token
+
+[Token]
+token = <Your_Bot_Token_Here>
